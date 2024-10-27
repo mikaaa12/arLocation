@@ -46,6 +46,12 @@ app.get('/api/locations', (req, res) => {
   res.json(locations);
 });
 
+// Endpoint untuk menghapus semua data lokasi
+app.delete('/api/locations', (req, res) => {
+  locations = []; // Mengosongkan array locations
+  res.json({ message: 'All locations cleared!' });
+});
+
 // Jalankan server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
